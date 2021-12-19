@@ -1,2 +1,0 @@
-paho_mqtt
-ipinfo

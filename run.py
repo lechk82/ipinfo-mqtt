@@ -38,6 +38,7 @@ def single_run(file):
     """
 
     _t = time.strftime("%Y-%m-%d %H:%M:%S")
+    timestamp = {"timestamp" : _t}
     config = load_config(file)
     topic = config["mqtt"]["topic"]
     id = config["id"]
@@ -45,6 +46,7 @@ def single_run(file):
     handler = ipinfo.getHandler(config["token"])
     details = handler.getDetails()
     details = details.details
+    details.update(timestamp)
     
     if config["debug"]:
         logging.info(json.dumps(details, indent=4, sort_keys=True))

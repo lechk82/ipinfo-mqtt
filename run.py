@@ -22,22 +22,13 @@ def load_config(file):
         config = json.load(config_file)
         return config
 
-
-def today():
-    """
-    Return date in YYYY-MM-DD
-    :return:
-    """
-    date = time.strftime("%Y-%m-%d")
-    return date
-
 def single_run(file):
     """
     Output current watts and kilowatts
     :return:
     """
 
-    _t = time.strftime("%Y-%m-%d %H:%M:%S")
+    _t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     timestamp = {"timestamp" : _t}
     config = load_config(file)
     topic = config["mqtt"]["topic"]

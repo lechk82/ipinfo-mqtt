@@ -53,14 +53,7 @@ def single_run(file):
 
     logging.info("%s -  Publishing MQTT to %s...", _t, topic+"/"+id)
     mqtt.message(config["mqtt"], topic+"/"+id, json.dumps(details))
-
-    #for i in details:
-    #    temp=topic+"/"+id+"/"+i
-    #    if config["debug"]:
-    #        logging.info("topic: %s \n\t value: %s",temp,details[i])
-    #    mqtt.message(config["mqtt"], temp, details[i])
        
-
 def daemon(file, interval):
     """
     Run as a daemon process

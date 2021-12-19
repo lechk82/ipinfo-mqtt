@@ -1,0 +1,7 @@
+version: '2'
+services:
+  ipinfo-mqtt:
+  build:
+    context: .
+    dockerfile: Dockerfile
+  container_name: 'ipinfo-mqtt'

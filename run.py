@@ -50,7 +50,7 @@ def single_run(file):
         logging.info(json.dumps(details, indent=4, sort_keys=True))
 
     logging.info("%s -  Publishing MQTT...",_t)
-    mqtt.message(config["mqtt"], topic+"/", json.dumps(details))
+    mqtt.message(config["mqtt"], topic+"/"+id, json.dumps(details))
 
     #for i in details:
     #    temp=topic+"/"+id+"/"+i

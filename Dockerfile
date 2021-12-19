@@ -137,14 +137,13 @@ RUN set -ex; \
 		\) -exec rm -rf '{}' +; \
 	rm -f get-pip.py
 
+ADD . /opt/app-root/src/ 
+
 RUN pip install -r requirements.txt
 	&& wget https://github.com/ipinfo/cli/releases/download/ipinfo-2.7.0/ipinfo_2.7.0_linux_arm64.tar.gz -O /root/ipinfo_2.7.0_linux_arm64.tar.gz \
 	&& cd /root \
 	&& tar xfvz ipinfo_2.7.0_linux_arm64.tar.gz \
 	&& rm ipinfo_2.7.0_linux_arm64.tar.gz
-
-
-ADD . /opt/app-root/src/ 
 
 WORKDIR /opt/app-root/src
 

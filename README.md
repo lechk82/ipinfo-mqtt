@@ -1,6 +1,8 @@
 # ipinfo-mqtt
 ipinfo mqtt client
 
+Get account and token from: https://ipinfo.io
+
 ### Using Docker
 Supported platforms: linux/amd64, linux/arm/v7, linux/arm64
 

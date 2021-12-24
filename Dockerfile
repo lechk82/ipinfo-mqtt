@@ -6,6 +6,8 @@ ARG BUILD_FROM=alpine:3.14
 # armv7: arm32v7/alpine:3.14
 # armhf: arm32v6/alpine:3.14
 
+FROM ${BUILD_FROM}
+
 # ensure local python is preferred over distribution python
 ENV PATH /usr/local/bin:$PATH
 

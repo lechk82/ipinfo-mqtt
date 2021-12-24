@@ -1,4 +1,10 @@
-FROM arm64v8/alpine:3.14
+# based on https://github.com/home-assistant/docker-base
+ARG BUILD_FROM=alpine:3.14
+# amd64: alpine:3.14
+# i386: i386/alpine:3.14
+# aarch64: arm64v8/alpine:3.14
+# armv7: arm32v7/alpine:3.14
+# armhf: arm32v6/alpine:3.14
 
 # ensure local python is preferred over distribution python
 ENV PATH /usr/local/bin:$PATH

@@ -36,7 +36,7 @@ def single_run(file):
 
     handler = ipinfo.getHandler(config["token"])
     details = handler.getDetails()
-    details = details.details
+    details = details.all
     details.update(timestamp)
     
     if config["debug"]:
